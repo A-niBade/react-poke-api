@@ -1,10 +1,14 @@
 * {
-  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d6d6d6;
 }
 
 @font-face {
   font-family: MadouFuto;
-  src: url(../static/fonts/MadouFutoMaruGothic.ttf);
+  src: url(/static/fonts/MadouFutoMaruGothic.ttf);
 }
 
 :root {
@@ -15,6 +19,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .header-page img {
@@ -22,6 +28,33 @@
   height: 200px;
 }
 
+.searchbar-container {
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.searchbar-input {
+  width: 80%;
+}
+
+.searchbar-btn {
+  margin-left: 15px;
+}
+
+.footer-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
 ::-webkit-input-placeholder {
+  font-family: var(--mainfont);
+}
+
+input[type="text"] {
+  font-family: var(--mainfont);
+}
+
+.nes-btn {
   font-family: var(--mainfont);
 }
