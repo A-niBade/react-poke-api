@@ -1,0 +1,27 @@
+* {
+  margin: 0px;
+}
+
+@font-face {
+  font-family: MadouFuto;
+  src: url(../static/fonts/MadouFutoMaruGothic.ttf);
+}
+
+:root {
+  --mainfont: MadouFuto;
+}
+
+.header-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-page img {
+  width: 600px;
+  height: 200px;
+}
+
+::-webkit-input-placeholder {
+  font-family: var(--mainfont);
+}
