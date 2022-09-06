@@ -1,14 +1,15 @@
 export const Searchbar = () => {
   return (
     <div className="searchbar-container">
-      <form className="nes-container is-rounded">
+      <form>
         <input
+          type="text"
           placeholder="Search Pokemon..."
-          className="nes-container is-rounded"
+          className="nes-input searchbar-input"
         />
-        <div>
-          <button>Search</button>
-        </div>
+        <button type="button" className="nes-btn searchbar-btn">
+          Search
+        </button>
       </form>
     </div>
   );
