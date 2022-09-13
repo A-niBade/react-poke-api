@@ -1,25 +1,52 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #d6d6d6;
-}
-
 @font-face {
   font-family: MadouFuto;
   src: url(/static/fonts/MadouFutoMaruGothic.ttf);
 }
 
 :root {
-  --mainfont: MadouFuto;
+  --mainFont: MadouFuto;
+  --pokedexColor: #c53836;
+  --pokedexBorder: #e6dbbd;
+  --paginationColor: #98b17a;
+  --paginationBorderColor: #eaddc5;
+  --btnRed: #8c3d39;
+  --btnBlue: #6398b6;
+  --btnHighLight: #cde2da;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  font-family: var(--mainFont);
+}
+
+button {
+  font-family: var(--mainFont);
+}
+
+select {
+  font-family: var(--mainFont);
+}
+
+body {
+  background-image: url(/static/background.jpg);
+}
+
+p,
+h3 {
+  font-family: var(--mainFont);
+  text-transform: capitalize;
 }
 
 .header-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-top: 10px;
 }
 
@@ -28,33 +55,87 @@ body {
   height: 200px;
 }
 
+.main-container {
+  display: flex;
+}
+
 .searchbar-container {
-  margin: 30px auto;
-  padding: 0 20px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--pokedexColor);
+  gap: 10px;
 }
 
-.searchbar-input {
-  width: 80%;
+.nes-container.is-rounded {
+  margin-left: 10px;
 }
 
-.searchbar-btn {
-  margin-left: 15px;
+.search-name,
+.search-type,
+.search-region {
+  background-color: var(--pokedexBorder);
 }
 
-.footer-container {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+.search-name input {
+  margin-bottom: 10px;
 }
 
-::-webkit-input-placeholder {
-  font-family: var(--mainfont);
+.pokemon-card {
+  display: flex;
 }
 
-input[type="text"] {
-  font-family: var(--mainfont);
+.title-name,
+.title-type,
+.title-region {
+  margin-bottom: 10px;
 }
 
-.nes-btn {
-  font-family: var(--mainfont);
+.pokedex-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex: 1;
+  margin-left: 40px;
+}
+
+.right-arrow,
+.left-arrow {
+  width: 64px;
+  height: 64px;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  font-size: 30px;
+  background-color: var(--paginationColor);
+}
+
+.left-arrow {
+  transform: scaleX(-1);
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-blue {
+  background-color: var(--btnBlue);
+  height: 2px;
+}
+
+.btn-red {
+  background-color: var(--btnRed);
+  height: 2px;
 }
