@@ -1,26 +1,26 @@
-import { useState } from "react";
-import { searchPokemon } from "../helpers/searchPokemon";
-import { Pagination } from "./Pagination";
+import { useState } from 'react';
+import { searchPokemon } from '../helpers/searchPokemon';
+import { Pagination } from './Pagination';
 
-export const Pokedex = ({ pages, setPages }) => {
-  const [inputValue, setInputValue] = useState("");
-  const [pokemon, setPokemon] = useState("");
+export const Pokedex = ({ pages, setPages, total }) => {
+  const [inputValue, setInputValue] = useState('');
+  const [pokemon, setPokemon] = useState('');
 
-  console.log(pages);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = await searchPokemon(inputValue);
     setPokemon(data);
-    setInputValue("");
+    setInputValue('');
   };
 
   const lastPage = () => {
-    const nextPage = Math.min(pages, 0);
+    const nextPage = Math.max(pages - 1, 0);
     setPages(nextPage);
   };
 
   const nextPage = () => {
-    const nextPage = Math.min(pages, total);
+    if (pages === total) return;
+    const nextPage = Math.min(pages + 1, total);
     setPages(nextPage);
   };
 
@@ -73,12 +73,7 @@ export const Pokedex = ({ pages, setPages }) => {
         <div className="nes-container is-rounded btn-blue"></div>
       </div>
 
-      <Pagination
-        pages={pages + 1}
-        totalPages={100}
-        onLeftClick={lastPage}
-        onRightClick={nextPage}
-      />
+      <Pagination pages={pages} totalPages={total} onLeftClick={lastPage} onRightClick={nextPage} />
     </aside>
   );
 };
