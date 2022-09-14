@@ -4,16 +4,17 @@ export const PokemonCard = ({ pokemon }) => {
       <div className="pokemon-card-img">
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       </div>
+
       <div>
-        <div>
+        <div className="pokemon-details">
           <h3>
-            <span>{pokemon.id}# </span>
-            {pokemon.name}
+            {pokemon.id}# {pokemon.name}
           </h3>
         </div>
-        <div>
+
+        <div className="pokemon-type">
           {pokemon.types.map((type, idx) => (
-            <div key={idx}>{type.name}</div>
+            <h5 key={idx}>{type.type.name}</h5>
           ))}
         </div>
       </div>
