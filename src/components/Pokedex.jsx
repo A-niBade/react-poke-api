@@ -20,6 +20,10 @@ export const Pokedex = ({ pages, setPages, total, onSearch }) => {
     setPages(nextPage);
   };
 
+  const filtrar = (type) => {
+    console.log(`type: ${type}`);
+  };
+
   return (
     <aside className="nes-container is-rounded searchbar-container">
       <div className="nes-container with-title is-rounded search-name">
@@ -37,6 +41,8 @@ export const Pokedex = ({ pages, setPages, total, onSearch }) => {
           </button>
         </form>
       </div>
+
+      <div></div>
 
       <div className="btn-container">
         <div className="nes-container is-rounded btn-red"></div>
