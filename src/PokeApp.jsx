@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import { Header } from './components/Header';
-import { Pokedex } from './components/Pokedex';
-import { PokedexGrid } from './components/PokedexGrid';
-import { getPokemons } from './helpers/getPokemons';
-import { getPokemonData } from './helpers/getPokemonData';
+import { Header } from "./components/Header";
+import { Pokedex } from "./components/Pokedex";
+import { PokemonGrid } from "./components/PokemonGrid";
+import { getPokemons } from "./helpers/getPokemons";
+import { getPokemonData } from "./helpers/getPokemonData";
 
-import '../public/styles/style.css';
+import { searchPokemon } from "./helpers/searchPokemon";
+
+import "../public/styles/style.css";
 
 export const PokeApp = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -30,6 +32,13 @@ export const PokeApp = () => {
     }
   };
 
+  const onSearch = async (pokemon) => {
+    setLoading(true);
+    const result = await searchPokemon(pokemon);
+    setPokemons([result]);
+    setLoading(false);
+  };
+
   useEffect(() => {
     fetchPokemons();
   }, [pages]);
@@ -38,9 +47,18 @@ export const PokeApp = () => {
     <div>
       <Header />
 
-      <div className="main-container">
-        <Pokedex pages={pages} setPages={setPages} total={total} />
-        {loading ? <div>Cargando pokemones</div> : <PokedexGrid pokemons={pokemons} />}
+      <div className="poke-container">
+        <Pokedex
+          pages={pages}
+          setPages={setPages}
+          total={total}
+          onSearch={onSearch}
+        />
+        {loading ? (
+          <div>Cargando pokemones</div>
+        ) : (
+          <PokemonGrid pokemons={pokemons} />
+        )}
       </div>
     </div>
   );

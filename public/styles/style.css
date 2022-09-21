@@ -1,10 +1,10 @@
 @font-face {
-  font-family: MadouFuto;
-  src: url(/static/fonts/MadouFutoMaruGothic.ttf);
+  font-family: PressStart;
+  src: url(/static/fonts/PressStart2P.ttf);
 }
 
 :root {
-  --mainFont: MadouFuto;
+  --mainFont: PressStart;
   --pokedexColor: #c53836;
   --pokedexBorder: #e6dbbd;
   --paginationColor: #98b17a;
@@ -14,6 +14,77 @@
   --btnHighLight: #cde2da;
 }
 
+.normal {
+  background-color: #8f99a1;
+}
+
+.fighting {
+  background-color: #ce3f6b;
+}
+
+.flying {
+  background-color: #92aadd;
+}
+
+.poison {
+  background-color: #ab6ac9;
+}
+
+.ground {
+  background-color: #da7747;
+}
+
+.rock {
+  background-color: #c9b68c;
+}
+
+.bug {
+  background-color: #91bf2c;
+}
+
+.ghost {
+  background-color: #5269ac;
+}
+
+.steel {
+  background-color: #598fa1;
+}
+
+.fire {
+  background-color: #fe9c52;
+}
+
+.water {
+  background-color: #4d8fd6;
+}
+
+.grass {
+  background-color: #91bf2c;
+}
+
+.electric {
+  background-color: #f4d13b;
+}
+
+.psychic {
+  background-color: #f97077;
+}
+
+.ice {
+  background-color: #73cebf;
+}
+
+.dragon {
+  background-color: #096cc3;
+}
+
+.dark {
+  background-color: #5b5365;
+}
+
+.fairy {
+  background-color: #ec90e8;
+}
 *,
 ::after,
 ::before {
@@ -37,7 +108,11 @@ body {
 }
 
 p,
-h3 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--mainFont);
   text-transform: capitalize;
 }
@@ -51,11 +126,11 @@ h3 {
 }
 
 .header-page img {
-  width: 600px;
-  height: 200px;
+  width: 550px;
+  height: 150px;
 }
 
-.main-container {
+.poke-container {
   display: flex;
 }
 
@@ -84,6 +159,34 @@ h3 {
 
 .pokemon-card {
   display: flex;
+  align-items: center;
+  border: solid 1px black;
+  border-radius: 20px;
+}
+
+.pokemon-type {
+  display: flex;
+  gap: 5px;
+  text-transform: capitalize;
+}
+
+.pokemon-card-img {
+  background-color: #6398b6;
+  border-radius: 20px;
+  border: solid 1px black;
+}
+
+.pokemon-details {
+  margin-left: 10px;
+}
+
+.pokemon-type-name {
+  border: solid 1px black;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: var(--mainFont);
+  font-size: small;
+  color: white;
 }
 
 .title-name,
@@ -97,6 +200,7 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   flex: 1;
   margin-left: 40px;
+  grid-gap: 10px;
 }
 
 .right-arrow,

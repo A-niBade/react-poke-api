@@ -1,6 +1,6 @@
 import { PokemonCard } from "./PokemonCard";
 
-export const PokedexGrid = ({ pokemons }) => {
+export const PokemonGrid = ({ pokemons }) => {
   return (
     <div className="pokedex-container">
       {pokemons.map((pokemon, idx) => (
