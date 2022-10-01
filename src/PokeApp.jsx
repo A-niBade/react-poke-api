@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import { Header } from "./components/Header";
 import { Pokedex } from "./components/Pokedex";
 import { PokemonGrid } from "./components/PokemonGrid";
 import { getPokemons } from "./helpers/getPokemons";
@@ -45,8 +44,6 @@ export const PokeApp = () => {
 
   return (
     <div>
-      <Header />
-
       <div className="poke-container">
         <Pokedex
           pages={pages}

@@ -6,7 +6,7 @@
 :root {
   --mainFont: PressStart;
   --pokedexColor: #c53836;
-  --pokedexBorder: #e6dbbd;
+  --pokedexSearch: #eefcea;
   --paginationColor: #98b17a;
   --paginationBorderColor: #eaddc5;
   --btnRed: #8c3d39;
@@ -119,42 +119,100 @@ h5 {
 
 .header-page {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  align-items: center;
 }
 
 .header-page img {
-  width: 550px;
+  width: 350px;
   height: 150px;
+}
+
+.dot {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: start;
+  padding: 20px;
+  border-bottom: solid 3px black;
+  align-content: stretch;
+  justify-content: center;
+  align-items: start;
+}
+
+.dot-blue {
+  display: grid;
+  height: 60px;
+  width: 60px;
+  background-color: #3297cb;
+  border-radius: 50%;
+  border: solid 1px black;
+  outline: solid 2px white;
+}
+
+.dot-red {
+  display: grid;
+  height: 25px;
+  width: 25px;
+  background-color: #fa0000;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+
+.dot-yellow {
+  height: 25px;
+  width: 25px;
+  background-color: #bb883a;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+
+.dot-green {
+  height: 25px;
+  width: 25px;
+  background-color: #4c6a44;
+  border-radius: 50%;
+  border: solid 1px black;
 }
 
 .poke-container {
   display: flex;
+  align-items: center;
 }
 
 .searchbar-container {
-  height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background-color: var(--pokedexColor);
   gap: 10px;
+  height: 600px;
+  width: 420px;
+  border-radius: 5px;
+  border: solid 3px black;
 }
 
-.nes-container.is-rounded {
-  margin-left: 10px;
+.search-name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--pokedexSearch);
+  border: solid 5px black;
+  padding: 10px;
+  width: 350px;
 }
 
-.search-name,
-.search-type,
-.search-region {
-  background-color: var(--pokedexBorder);
+.searchbar-input {
+  border: solid 2px black;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+  text-indent: 15px;
+  text-align: center;
 }
 
-.search-name input {
-  margin-bottom: 10px;
+.search-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
 }
 
 .pokemon-card {

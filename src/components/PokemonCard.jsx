@@ -1,8 +1,4 @@
 export const PokemonCard = ({ pokemon }) => {
-  const style = `pokemon-card ${pokemon.type}`;
-
-  console.log(style);
-
   return (
     <div className="pokemon-card">
       <div className="pokemon-card-img">
