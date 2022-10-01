@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Header } from "./Header";
 import { Pagination } from "./Pagination";
 
 export const Pokedex = ({ pages, setPages, total, onSearch }) => {
@@ -25,36 +26,41 @@ export const Pokedex = ({ pages, setPages, total, onSearch }) => {
   };
 
   return (
-    <aside className="nes-container is-rounded searchbar-container">
-      <div className="nes-container with-title is-rounded search-name">
-        <p className="title title-name">Search by name</p>
-        <form onSubmit={handleSubmit}>
+    <div>
+      <Header />
+      <aside className="searchbar-container">
+        <div className="dot">
+          <span className="dot-blue"></span>
+          <span className="dot-red"></span>
+          <span className="dot-yellow"></span>
+          <span className="dot-green"></span>
+        </div>
+
+        <form onSubmit={handleSubmit} className="search-name">
           <input
             type="text"
             placeholder="Search Pokemon..."
-            className="nes-input searchbar-input"
+            className="searchbar-input"
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
           />
-          <button type="submit" className="nes-btn search-btn">
+          <button type="submit" className="search-btn">
             Search
           </button>
         </form>
-      </div>
 
-      <div></div>
+        <div className="btn-container">
+          <div className="nes-container is-rounded btn-red"></div>
+          <div className="nes-container is-rounded btn-blue"></div>
+        </div>
 
-      <div className="btn-container">
-        <div className="nes-container is-rounded btn-red"></div>
-        <div className="nes-container is-rounded btn-blue"></div>
-      </div>
-
-      <Pagination
-        pages={pages + 1}
-        totalPages={total}
-        onLeftClick={lastPage}
-        onRightClick={nextPage}
-      />
-    </aside>
+        <Pagination
+          pages={pages + 1}
+          totalPages={total}
+          onLeftClick={lastPage}
+          onRightClick={nextPage}
+        />
+      </aside>
+    </div>
   );
 };

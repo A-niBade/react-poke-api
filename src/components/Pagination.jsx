@@ -1,11 +1,16 @@
-export const Pagination = ({ onLeftClick, onRightClick, pages, totalPages }) => {
+export const Pagination = ({
+  onLeftClick,
+  onRightClick,
+  pages,
+  totalPages,
+}) => {
   return (
     <div className="pagination-container">
       <button onClick={onLeftClick}>
         <img src="static/arrow.svg" className="right-arrow" />
       </button>
 
-      <div className="nes-container is-rounded pagination">
+      <div className="pagination">
         <h3>
           {pages} of {totalPages}
         </h3>
