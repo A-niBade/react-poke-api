@@ -6,7 +6,7 @@ export const Pagination = ({
 }) => {
   return (
     <div className="pagination-container">
-      <button onClick={onLeftClick}>
+      <button onClick={onLeftClick} className="btn-right">
         <img src="static/arrow.svg" className="right-arrow" />
       </button>
 
@@ -16,7 +16,7 @@ export const Pagination = ({
         </h3>
       </div>
 
-      <button onClick={onRightClick}>
+      <button onClick={onRightClick} className="btn-left">
         <img src="static/arrow.svg" className="left-arrow" />
       </button>
     </div>
