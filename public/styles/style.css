@@ -198,6 +198,7 @@ h5 {
   border: solid 5px black;
   padding: 10px;
   width: 350px;
+  align-self: center;
 }
 
 .searchbar-input {
@@ -300,4 +301,10 @@ h5 {
 .btn-red {
   background-color: var(--btnRed);
   height: 2px;
+}
+
+.btn-right,
+.btn-left {
+  background: transparent;
+  border: none;
 }

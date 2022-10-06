@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 
-import { Pokedex } from "./components/Pokedex";
-import { PokemonGrid } from "./components/PokemonGrid";
-import { getPokemons } from "./helpers/getPokemons";
-import { getPokemonData } from "./helpers/getPokemonData";
+import { Pokedex, PokemonGrid } from "../components";
+import { getPokemons, getPokemonData, searchPokemon } from "../services";
 
-import { searchPokemon } from "./helpers/searchPokemon";
-
-import "../public/styles/style.css";
+import "../../public/styles/style.css";
 
 export const PokeApp = () => {
   const [pokemons, setPokemons] = useState([]);
